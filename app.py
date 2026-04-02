@@ -10,5 +10,9 @@ def home():
 def plans():
     return {"plans": ["Basic", "Premium", "Pro"]}
 
+@app.route('/members')
+def members():
+    return {"members": ["John", "Alice", "Bob"]}
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
