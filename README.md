@@ -24,23 +24,18 @@ This project demonstrates:
 Local Setup and Execution Instructions
 
 Step 1: Clone the Repository
-
-\bash
 git clone https://github.com/2024tm93724-Srishti/acest-gym-app.git
+
 cd acest-gym-app
 
 
 Step 2: Install Dependencies
 
-\bash
 pip install -r requirements.txt
-
 
 Step 3: Run the Application
 
-\bash
 python app.py
-
 
 Step 4: Open in Browser
 
@@ -52,12 +47,10 @@ Running Tests Manually
 
 Step 1: Install pytest (if not installed)
 
-\bash
 python -m pip install flask pytest
 
 Step 2: Run Tests
 
-bash
 pytest
 
 Expected Output
@@ -68,19 +61,15 @@ Docker Instructions
 
 Step 1: Build Docker Image
 
-\bash
 docker build -t acest-gym-app .
 
 Step 2: Run Docker Container
 
-\bash
 docker run -p 5000:5000 acest-gym-app
 
 Access Application
 
 http://localhost:5000
-
----
 
 CI/CD Pipeline Overview
 
@@ -118,7 +107,6 @@ Steps in Jenkins:
 2. Configure Git repository
 3. Add Build Step:
 
-\bash
 docker build -t acest-gym-app .
 
 Project Structure
