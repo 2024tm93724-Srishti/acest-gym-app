@@ -1,16 +1,19 @@
-from app import app
+from app import create_app
 
 def test_home():
+    app = create_app()
     client = app.test_client()
-    response = client.get('/')
-    assert response.status_code == 200
+    res = client.get('/')
+    assert res.status_code == 200
 
 def test_members():
+    app = create_app()
     client = app.test_client()
-    response = client.get('/members')
-    assert response.status_code == 200
+    res = client.get('/members')
+    assert b"Aman" in res.data
 
 def test_plans():
+    app = create_app()
     client = app.test_client()
-    response = client.get('/plans')
-    assert response.status_code == 200
+    res = client.get('/plans')
+    assert b"Basic" in res.data

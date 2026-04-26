@@ -1,18 +1,23 @@
-from flask import Flask
+from flask import Flask, jsonify
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Welcome to Gym App!"
+    @app.route('/')
+    def home():
+        return "Gym Management System Running"
 
-@app.route('/plans')
-def plans():
-    return {"plans": ["Basic", "Premium", "Pro"]}
+    @app.route('/members')
+    def members():
+        return jsonify({"members": ["Aman", "Riya", "John"]})
 
-@app.route('/members')
-def members():
-    return {"members": ["John", "Alice", "Bob"]}
+    @app.route('/plans')
+    def plans():
+        return jsonify({"plans": ["Basic", "Premium", "Pro"]})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    return app
+
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host="0.0.0.0", port=5000)
